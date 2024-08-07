@@ -1,4 +1,4 @@
-# Toxicity-Classifier-App
+# toxicity-classifier
 This is the official repo of "Toxicity Termiinator App"  This takes text as an input and classify that between toxic and non-toxic.
 
 use
