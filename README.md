@@ -1,2 +1,6 @@
-# toxic-terminator
-developed a deep learning based **Toxic Comment Classification System** to detect and classify toxic texts, promoting healthy conversation by discouraging negative or profane language in chats.
+# Toxicity-Classifier-App
+This is the official repo of "Toxicity Termiinator App"  This takes text as an input and classify that between toxic and non-toxic.
+use
+pip install -r requirements.txt
+install streamlit
+use streamlit run app.py
