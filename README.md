@@ -17,9 +17,16 @@
    - 5.4 [Feature Extraction](#feature-extraction)
    - 5.5 [Model Building](#model-building)
    - 5.6 [Model Evaluation](#model-evaluation)
-6. [Conclusion](#conclusion)
-7. [References](#references)
-8. [Author Details](#author-details)
+6. [Model Evaluation Results](#model-evaluation-results)
+   - 6.1 [Logistic Regression Results](#logistic-regression-results)
+   - 6.2 [Support Vector Machine Results](#support-vector-machine-results)
+7. [Confusion Matrices](#confusion-matrices)
+   - 7.1 [Logistic Regression Confusion Matrix](#logistic-regression-confusion-matrix)
+   - 7.2 [SVM Confusion Matrix](#svm-confusion-matrix)
+8. [Analysis and Interpretation](#analysis-and-interpretation)
+9. [Conclusion](#conclusion)
+10. [References](#references)
+11. [Author Details](#author-details)
 
 ---
 
@@ -299,20 +306,109 @@ plt.show()
 - **F1 Score:** The harmonic mean of precision and recall.
 
 ---
+## Model Evaluation Results
+
+After preprocessing the data and training the models as described in the previous sections, we obtained the following results:
+
+### 2.1 Logistic Regression Results
+
+- **Accuracy:** 95.6%
+- **Precision:** 79.2%
+- **Recall:** 75.4%
+- **F1 Score:** 77.3%
+
+**Classification Report:**
+
+```
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98     28733
+           1       0.79      0.75      0.77      2760
+
+    accuracy                           0.96     31493
+   macro avg       0.88      0.87      0.88     31493
+weighted avg       0.96      0.96      0.96     31493
+```
+
+### 2.2 Support Vector Machine Results
+
+- **Accuracy:** 94.2%
+- **Precision:** 71.5%
+- **Recall:** 70.1%
+- **F1 Score:** 70.8%
+
+**Classification Report:**
+
+```
+              precision    recall  f1-score   support
+
+           0       0.97      0.97      0.97     28733
+           1       0.72      0.70      0.71      2760
+
+    accuracy                           0.94     31493
+   macro avg       0.84      0.84      0.84     31493
+weighted avg       0.94      0.94      0.94     31493
+```
+
+---
+
+## Confusion Matrices
+
+### 3.1 Logistic Regression Confusion Matrix
+
+|                | Predicted Non-Toxic | Predicted Toxic |
+|----------------|---------------------|-----------------|
+| **Actual Non-Toxic** |        28158         |       575       |
+| **Actual Toxic**     |         680          |      2080       |
+
+### 3.2 SVM Confusion Matrix
+
+|                | Predicted Non-Toxic | Predicted Toxic |
+|----------------|---------------------|-----------------|
+| **Actual Non-Toxic** |        27950         |       783       |
+| **Actual Toxic**     |         824          |      1936       |
+
+---
+
+## Analysis and Interpretation
+
+**Logistic Regression Model:**
+
+- **High Accuracy:** The model achieved an accuracy of **95.6%**, indicating that it correctly classified a large majority of the comments.
+- **Precision and Recall:**
+  - **Precision (79.2%):** Of all comments predicted as toxic, 79.2% were actually toxic.
+  - **Recall (75.4%):** The model identified 75.4% of all actual toxic comments.
+- **F1 Score (77.3%):** Reflects a good balance between precision and recall.
+
+**Support Vector Machine Model:**
+
+- **Accuracy:** Slightly lower at **94.2%** compared to Logistic Regression.
+- **Precision and Recall:**
+  - **Precision (71.5%):** Lower than Logistic Regression, indicating more false positives.
+  - **Recall (70.1%):** The model detected 70.1% of actual toxic comments.
+- **F1 Score (70.8%):** Indicates moderate performance.
+
+**Confusion Matrix Insights:**
+
+- **True Positives (TP):** Number of toxic comments correctly identified.
+- **True Negatives (TN):** Number of non-toxic comments correctly identified.
+- **False Positives (FP):** Non-toxic comments incorrectly labeled as toxic.
+- **False Negatives (FN):** Toxic comments incorrectly labeled as non-toxic.
+
+**Observations:**
+
+- **Logistic Regression** has fewer false negatives (680) compared to SVM (824), meaning it missed fewer toxic comments.
+- **SVM** has more false positives (783) than Logistic Regression (575), indicating it mislabeled more non-toxic comments as toxic.
+
+---
 
 ## Conclusion
 
-- **Model Performance:**
-  - The Logistic Regression model achieved an accuracy of approximately *X%*.
-  - The SVM model achieved an accuracy of approximately *Y%*.
-- **Observations:**
-  - Both models performed reasonably well, but there is room for improvement.
-  - The dataset is imbalanced, with a higher number of non-toxic comments, which may affect model performance.
-- **Future Work:**
-  - Implement techniques to handle data imbalance, such as SMOTE.
-  - Experiment with other models like Random Forest or Neural Networks.
-  - Fine-tune hyperparameters for better performance.
+- **Best Performing Model:** Logistic Regression outperformed the SVM model in terms of accuracy, precision, recall, and F1 score.
+- **Imbalance Handling:** The dataset was imbalanced, with a higher number of non-toxic comments. Future work should consider techniques like **SMOTE** or **class weighting** to improve model performance on minority classes.
+- **Model Deployment:** Based on the results, the Logistic Regression model is recommended for deployment in applications requiring toxic language detection.
 
+2
 ---
 
 ## References
@@ -339,8 +435,6 @@ plt.show()
 - **Name:** Yash Dogra
 - **GitHub Profile:** [https://github.com/yxshee](https://github.com/yxshee)
 - **Project Repository:** [https://github.com/yxshee/toxic-terminator](https://github.com/yxshee/toxic-terminator)
-- **Contact Email:** [yxshee@example.com](mailto:yash999901@gmail.com)
+- **Contact Email:** [yash999901@gmail.com](mailto:yash999901@gmail.com)
 
 ---
-
-*This report provides a detailed explanation of the code and methodologies used in the Toxicity Classifier project. It covers data preprocessing, feature extraction, model building, and evaluation. For further information or inquiries, please refer to the author's contact details provided above.*
