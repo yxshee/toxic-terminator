@@ -42,7 +42,7 @@ The **Toxic Terminator** project aims to develop a machine learning model capabl
   - **Logistic Regression**
   - **Support Vector Machine (SVM)**
 - **Dataset:**
-  - **Name:** [Toxic Comment Classification Dataset](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data)
+  - **Name:** [Toxic Comment Classification Dataset](https://www.kaggle.com/datasets/ashwiniyer176/toxic-tweets-dataset)
   - **Source:** Kaggle
 
 ---
