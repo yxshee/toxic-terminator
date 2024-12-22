@@ -1,3 +1,7 @@
+Certainly! Below is the corrected version of your README for the **Toxic Terminator: Toxicity Classifier** project. I've addressed inconsistencies, formatting issues, and corrected the dataset link to align with the project description.
+
+---
+
 # Toxic Terminator: Toxicity Classifier
 
 **A Machine Learning Model for Detecting Toxic Language**
@@ -49,7 +53,7 @@ The **Toxic Terminator** project aims to develop a machine learning model capabl
   - **Logistic Regression**
   - **Support Vector Machine (SVM)**
 - **Dataset:**
-  - **Name:** [Toxic Comment Classification Dataset](https://www.kaggle.com/datasets/ashwiniyer176/toxic-tweets-dataset)
+  - **Name:** [Toxic Comment Classification Dataset](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
   - **Source:** Kaggle
 
 ---
@@ -65,7 +69,7 @@ The **Toxic Terminator** project aims to develop a machine learning model capabl
 
 ## Dataset Description
 
-The dataset used in this project is the **Toxic Comment Classification Dataset** from Kaggle. It contains thousands of Wikipedia comments which have been labeled by human raters for toxic behavior. The types of toxicity are:
+The dataset used in this project is the **Toxic Comment Classification Dataset** from Kaggle. It contains thousands of Wikipedia comments that have been labeled by human raters for toxic behavior. The types of toxicity are:
 
 - **Toxic**
 - **Severe Toxic**
@@ -306,11 +310,12 @@ plt.show()
 - **F1 Score:** The harmonic mean of precision and recall.
 
 ---
+
 ## Model Evaluation Results
 
 After preprocessing the data and training the models as described in the previous sections, we obtained the following results:
 
-### 2.1 Logistic Regression Results
+### 6.1 Logistic Regression Results
 
 - **Accuracy:** 95.6%
 - **Precision:** 79.2%
@@ -330,7 +335,7 @@ After preprocessing the data and training the models as described in the previou
 weighted avg       0.96      0.96      0.96     31493
 ```
 
-### 2.2 Support Vector Machine Results
+### 6.2 Support Vector Machine Results
 
 - **Accuracy:** 94.2%
 - **Precision:** 71.5%
@@ -354,14 +359,14 @@ weighted avg       0.94      0.94      0.94     31493
 
 ## Confusion Matrices
 
-### 3.1 Logistic Regression Confusion Matrix
+### 7.1 Logistic Regression Confusion Matrix
 
 |                | Predicted Non-Toxic | Predicted Toxic |
 |----------------|---------------------|-----------------|
 | **Actual Non-Toxic** |        28158         |       575       |
 | **Actual Toxic**     |         680          |      2080       |
 
-### 3.2 SVM Confusion Matrix
+### 7.2 SVM Confusion Matrix
 
 |                | Predicted Non-Toxic | Predicted Toxic |
 |----------------|---------------------|-----------------|
@@ -408,7 +413,6 @@ weighted avg       0.94      0.94      0.94     31493
 - **Imbalance Handling:** The dataset was imbalanced, with a higher number of non-toxic comments. Future work should consider techniques like **SMOTE** or **class weighting** to improve model performance on minority classes.
 - **Model Deployment:** Based on the results, the Logistic Regression model is recommended for deployment in applications requiring toxic language detection.
 
-2
 ---
 
 ## References
@@ -438,3 +442,4 @@ weighted avg       0.94      0.94      0.94     31493
 - **Contact Email:** [yash999901@gmail.com](mailto:yash999901@gmail.com)
 
 ---
+
