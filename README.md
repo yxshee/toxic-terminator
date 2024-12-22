@@ -1,5 +1,3 @@
-Certainly! Below is the corrected version of your README for the **Toxic Terminator: Toxicity Classifier** project. I've addressed inconsistencies, formatting issues, and corrected the dataset link to align with the project description.
-
 ---
 
 # Toxic Terminator: Toxicity Classifier
