@@ -44,7 +44,7 @@ Toxic Terminator aims to combat online toxicity by providing an efficient and re
 
 ### Source
 
-The dataset utilized in this project was sourced from [Kaggle](https://www.kaggle.com/datasets), specifically the [Twitter Toxicity Dataset](https://www.kaggle.com/datasets).
+The dataset utilized in this project was sourced from [Kaggle](https://www.kaggle.com/datasets), specifically the [Twitter Toxicity Dataset](https://www.kaggle.com/datasets/ashwiniyer176/toxic-tweets-dataset?resource=download).
 
 ### Structure & Statistics
 
@@ -404,7 +404,7 @@ This project is licensed under the [MIT License](LICENSE). You are free to use, 
 
 ## Acknowledgements
 
-- **Kaggle**: For providing the [Twitter Toxicity Dataset](https://www.kaggle.com/datasets).
+- **Kaggle**: For providing the [Twitter Toxicity Dataset](https://www.kaggle.com/datasets/ashwiniyer176/toxic-tweets-dataset?resource=download).
 - **scikit-learn**: For the robust machine learning tools utilized in this project.
 - **OpenAI**: For insights and support in developing AI-driven solutions.
 
