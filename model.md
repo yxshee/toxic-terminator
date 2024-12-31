@@ -1,4 +1,5 @@
-<img src ="">
+<img src ="https://media.giphy.com/media/sCd7OxBZ9zZ7TaYiyh/giphy.gif?cid=790b7611rer5beimqyitna2pwa4p2owoc0ngon7ssdudvbu7&ep=v1_stickers_search&rid=giphy.gif&ct=s">
+
 # Toxic Terminator
 
 **Developed By:**
@@ -710,7 +711,6 @@ For a comprehensive view of the project's codebase, including data preprocessing
 - **FastAPI Documentation:** [https://fastapi.tiangolo.com/](https://fastapi.tiangolo.com/)
 - **NLTK Documentation:** [https://www.nltk.org/](https://www.nltk.org/)
 - **Scikit-learn Documentation:** [https://scikit-learn.org/](https://scikit-learn.org/)
-```
 
 ---
 
