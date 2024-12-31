@@ -665,9 +665,10 @@ plt.grid(True)
 plt.show()
 ```
 
-**ROC Curve:**
+**ROC Curve** <br>
 
-![ROC Curve](path_to_roc_curve_image)
+<a><img width="685" alt="image" src="https://github.com/user-attachments/assets/a3a6f654-fe8c-4a71-b737-dd42cdca8c7c" /></a>
+
 
 ---
 
