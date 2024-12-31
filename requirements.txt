@@ -3,3 +3,4 @@ scikit-learn
 uvicorn
 numpy
 streamlit
+nltk
