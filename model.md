@@ -1,4 +1,3 @@
-<img src ="https://media.giphy.com/media/sCd7OxBZ9zZ7TaYiyh/giphy.gif?cid=790b7611rer5beimqyitna2pwa4p2owoc0ngon7ssdudvbu7&ep=v1_stickers_search&rid=giphy.gif&ct=s">
 
 # Toxic Terminator
 
