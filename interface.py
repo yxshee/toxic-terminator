@@ -25,7 +25,7 @@ st.set_page_config(page_title="🔍 Toxicity Detection App", layout="centered")
 @st.cache_resource
 def initialize_nltk():
     nltk_packages = [
-        'punkt',
+        'punkt_tab',
         'omw-1.4',
         'wordnet',
         'stopwords',
