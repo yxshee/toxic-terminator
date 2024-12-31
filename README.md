@@ -206,7 +206,7 @@ A **Multinomial Naive Bayes** classifier was selected due to its effectiveness i
    ```
 
 2. **Training**:
-   - The model was trained on the transformed training data.
+   - The model was trained on  transformed training data.
 
 3. **Saving the Model**:
    - The trained model was serialized and saved as `toxicity_model.pkt` for future use.
