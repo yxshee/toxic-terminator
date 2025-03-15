@@ -29,10 +29,6 @@
 
 ## 📌 Project Overview
 
-<div align="center">
-  <img src="https://via.placeholder.com/600x200.png?text=Text+Classification+Workflow" alt="Workflow">
-</div>
-
 Toxic Terminator is an **ML-powered shield** against online toxicity 🛡️. Our solution helps platforms:
 
 ✅ Automatically flag harmful content  
@@ -220,11 +216,16 @@ This project is licensed under the **[MIT License](LICENSE)** - see the [LICENSE
 | Organization | Contribution |
 |--------------|--------------|
 | ![Kaggle Logo](https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/189_Kaggle_logo_logos-32.png) Kaggle | Dataset Provision |
-| ![Scikit-learn Logo](https://github.com/user-attachments/assets/9eac7cf6-9e07-4a59-bf05-60e6aa71699b) Scikit-learn | ML Framework |
+|  <img width="40" src="https://github.com/user-attachments/assets/9eac7cf6-9e07-4a59-bf05-60e6aa71699b" alt="Workflow"> Scikit-learn | ML Framework |
 | ![Python Logo](https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-32.png) Python | Core Language |
 
 ---
 
 <div align="center">
-  Made with ❤️ by AI Safety Advocates | 🛡️ Keep Conversations Clean!
+  Made with ❤️ by YXSHEE | 🛡️ Keep Conversations Clean!
 </div>
+
+<div align="center">
+ 
+</div>
+
