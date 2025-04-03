@@ -113,3 +113,9 @@ footer {visibility: hidden;}
 </style>
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+if __name__ == "__main__":
+    import streamlit.web.cli as stcli
+    import sys
+    sys.argv = ["streamlit", "run", sys.argv[0]]
+    stcli.main()
