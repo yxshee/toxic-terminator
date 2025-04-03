@@ -25,15 +25,15 @@ st.set_page_config(page_title="🔍 Toxicity Detection App", layout="centered")
 @st.cache_resource
 def initialize_nltk():
     nltk_packages = [
-        'punkt_tab',
-        'omw-1.4',
-        'wordnet',
-        'stopwords',
-        'averaged_perceptron_tagger_eng'
+        "punkt",                   # corrected from "punkt_tab"
+        "omw-1.4",
+        "wordnet",
+        "stopwords",
+        "averaged_perceptron_tagger"  # corrected from "averaged_perceptron_tagger_eng"
     ]
     for package in nltk_packages:
         nltk.download(package, quiet=True)
-    return stopwords.words('english')
+    return stopwords.words("english")
 
 # Initialize NLTK and get English stopwords
 stop_words = initialize_nltk()
