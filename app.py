@@ -1,10 +1,19 @@
+# NOTE: Run this app with: streamlit run /Users/venom/toxic-terminator/app.py
+
 import streamlit as st
 import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 
+# Cache the loading of resources to improve performance
 @st.cache_resource
 def load_resources():
+    """
+    Load the pre-trained TF-IDF vectorizer and Naive Bayes model.
+
+    Returns:
+        tuple: A tuple containing the TF-IDF vectorizer and the Naive Bayes model.
+    """
     with open("tf_idf.pkt", "rb") as f:
         vectorizer = pickle.load(f)
     with open("toxicity_model.pkt", "rb") as f:
@@ -12,12 +21,21 @@ def load_resources():
     return vectorizer, nb_model
 
 def toxicity_prediction(text):
+    """
+    Predict the toxicity of the given text.
+
+    Args:
+        text (str): The input text to classify.
+
+    Returns:
+        int: The predicted class (1 = Toxic, 0 = Non-Toxic).
+    """
     vectorizer, nb_model = load_resources()
     text_tfidf = vectorizer.transform([text])
     prediction = nb_model.predict(text_tfidf)
     return prediction
 
-# Set the title and subheader with CSS styles
+# Set the title and subheader with custom CSS styles
 st.title("Toxic Terminator App")
 st.markdown(
     """
@@ -51,9 +69,10 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Create a text input widget with CSS styles
+# Create a text input widget for user input
 text_input = st.text_area("Enter your text")
 
+# Apply custom styles to the text area
 st.markdown(
     """
     <style>
@@ -68,9 +87,10 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Apply styles to the analyze button
+# Analyze button to trigger prediction
 if st.button("Analyze"):
     if text_input:
+        # Perform toxicity prediction
         result = toxicity_prediction(text_input)
         st.subheader("Result:")
         if result[0] == 1:
@@ -80,7 +100,7 @@ if st.button("Analyze"):
     else:
         st.warning("Please enter some text to analyze.")
 
-# Add an "About" page to explain how the project works with CSS styles
+# Add an "About" section to explain the project
 st.markdown("---")
 st.header("About This Project")
 st.markdown(
