@@ -1,4 +1,3 @@
-
 # 🚀 Toxic Terminator: AI-Powered Toxicity Detection 🛡️
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -24,6 +23,7 @@
 10. [🤝 Contributing](#-contributing)
 11. [📜 License](#-license)
 12. [🙏 Acknowledgements](#-acknowledgements)
+13. [🚀 Deployment Instructions](#-deployment-instructions)
 
 ---
 
@@ -218,6 +218,23 @@ This project is licensed under the **[MIT License](LICENSE)** - see the [LICENSE
 | ![Kaggle Logo](https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/189_Kaggle_logo_logos-32.png) Kaggle | Dataset Provision |
 |  <img width="40" src="https://github.com/user-attachments/assets/9eac7cf6-9e07-4a59-bf05-60e6aa71699b" alt="Workflow"> Scikit-learn | ML Framework |
 | ![Python Logo](https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-32.png) Python | Core Language |
+
+---
+
+## 🚀 Deployment Instructions
+
+To deploy the project on Streamlit:
+
+1. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Ensure that the model files (`tf_idf.pkt` and `toxicity_model.pkt`) are in the project root.
+3. Launch the app with Streamlit:
+   ```bash
+   streamlit run app.py
+   ```
+4. Open the URL provided by Streamlit (usually http://localhost:8501) in your browser.
 
 ---
 
