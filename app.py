@@ -32,7 +32,7 @@ from nltk.corpus import wordnet
 # - averaged_perceptron_tagger: For part-of-speech tagging
 nltk.download('punkt_tab')
 nltk.download('wordnet')
-nltk.download('averaged_perceptron_tagger.eng')
+nltk.download('averaged_perceptron_tagger_eng')
 
 # ---------------- Minimalist Theme ---------------- #
 # Custom CSS styling for the Streamlit interface
