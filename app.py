@@ -129,7 +129,7 @@ def preprocess_text(text):
     text = re.sub(r'[^a-zA-Z\s]', ' ', text)
     
     # Tokenize into individual words
-    tokens = word_tokenize(text.lower(), language="english")
+    tokens = word_tokenize(text.lower())
     
     # Apply part-of-speech tagging
     pos_tokens = pos_tag(tokens)
