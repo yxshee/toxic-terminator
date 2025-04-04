@@ -30,7 +30,7 @@ from nltk.corpus import wordnet
 # - punkt: For tokenization (breaking text into words)
 # - wordnet: For lemmatization (reducing words to base forms)
 # - averaged_perceptron_tagger: For part-of-speech tagging
-nltk.download('punkt')
+nltk.download('punkt_tab')
 nltk.download('wordnet')
 nltk.download('averaged_perceptron_tagger')
 
