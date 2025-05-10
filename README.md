@@ -245,4 +245,3 @@ To deploy the project on Streamlit:
 <div align="center">
  
 </div>
-
