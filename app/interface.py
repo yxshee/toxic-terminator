@@ -121,7 +121,7 @@ def prepare_text(text):
 
 # Import styling from app.py
 try:
-    from app.app import st as app_st
+    from docs.app import st as app_st
 except ImportError:
     # If app.py is not available, continue without styling
     pass
