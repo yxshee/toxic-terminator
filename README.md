@@ -151,7 +151,7 @@ git clone https://github.com/yxshee/toxic-terminator.git
 pip install -r requirements.txt
 
 # 3. Run training
-python train_model.py
+python notebooks/model.ipynb
 ```
 
 ### 🐳 Docker Setup
@@ -229,7 +229,7 @@ To deploy the project on Streamlit:
    ```bash
    pip install -r requirements.txt
    ```
-2. Ensure that the model files (`tf_idf.pkt` and `toxicity_model.pkt`) are in the project root.
+2. Ensure that the model files (`models/tf_idf.pkt` and `models/toxicity_model.pkt`) are in the project directory.
 3. Launch the app with Streamlit:
    ```bash
    streamlit run app.py

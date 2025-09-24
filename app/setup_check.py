@@ -82,7 +82,7 @@ def main():
     
     # Check for the existence of required model files
     print("\nChecking required model files...")
-    model_files = ["toxicity_model.pkt", "tf_idf.pkt"]
+    model_files = ["models/toxicity_model.pkt", "models/tf_idf.pkt"]
     missing_files = []
     
     for file in model_files:
@@ -121,7 +121,7 @@ def main():
     
     if not missing_packages and not missing_files:
         print("\n✅ All dependencies are satisfied. You can run the Toxic Terminator with:")
-        print("streamlit run interface.py")
+        print("streamlit run app.py")
 
 if __name__ == "__main__":
     # Execute the main function when script is run directly
