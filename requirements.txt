@@ -6,3 +6,5 @@ transformers
 torch
 scikit-learn
 nltk
+plotly
+kaleido
