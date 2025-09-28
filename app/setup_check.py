@@ -3,126 +3,98 @@
 Toxic Terminator - Setup Check Utility
 ======================================
 
-This script helps users verify that all required dependencies and model files
-are correctly installed and available for the Toxic Terminator application.
+Verifies all dependencies and model files are correctly installed.
 
-The utility performs the following checks:
-1. Ensures all required Python packages are installed
-2. Verifies the existence of necessary model files
-3. Downloads required NLTK resources if they're missing
-4. Provides guidance for fixing any detected issues
-
-Usage:
-    python setup_check.py
-
-Author: Venom
-Date: 2023
+Usage: python setup_check.py
 """
 
 import sys
 import importlib
-import subprocess
 import os
+from pathlib import Path
 
-def check_package(package_name):
-    """
-    Check if a Python package is installed and available.
-    
-    Args:
-        package_name (str): Name of the package to check
-        
-    Returns:
-        bool: True if package is installed, False otherwise
-    """
+# Get the project root directory
+SCRIPT_DIR = Path(__file__).parent
+PROJECT_ROOT = SCRIPT_DIR.parent
+MODELS_DIR = PROJECT_ROOT / "models"
+
+
+def check_package(package_name, import_name=None):
+    """Check if a Python package is installed."""
     try:
-        # Attempt to import the package to verify it's installed
-        importlib.import_module(package_name)
+        importlib.import_module(import_name or package_name)
         return True
     except ImportError:
-        # Return False if import fails, indicating package is not installed
         return False
 
+
 def main():
-    """
-    Main function that performs all setup verification checks and reports results.
-    
-    This function:
-    1. Checks for required Python packages
-    2. Verifies model files exist
-    3. Ensures NLTK resources are downloaded
-    4. Provides installation instructions for any missing components
-    """
-    # List of required Python packages for the application
+    """Perform all setup verification checks."""
+    # Required packages: (display_name, import_name)
     required_packages = [
-        "streamlit",  # Web interface framework
-        "nltk",       # Natural Language Toolkit for text processing
-        "sklearn",    # Machine learning library (scikit-learn)
-        "pandas",     # Data manipulation and analysis
-        "numpy"       # Numerical computing
+        ("streamlit", "streamlit"),
+        ("nltk", "nltk"),
+        ("scikit-learn", "sklearn"),
+        ("pandas", "pandas"),
+        ("numpy", "numpy")
     ]
     
-    # List of required NLTK resources for text processing
+    # Required NLTK resources (path, download_name)
     nltk_resources = [
-        "punkt",                    # Tokenizer for splitting text into words
-        "wordnet",                  # Lexical database for word meanings
-        "averaged_perceptron_tagger", # Part-of-speech tagger
-        "stopwords"                 # Common words to filter out
+        ("tokenizers/punkt_tab", "punkt_tab"),
+        ("corpora/wordnet", "wordnet"),
+        ("taggers/averaged_perceptron_tagger_eng", "averaged_perceptron_tagger_eng")
     ]
     
-    print("Checking required packages...")
+    print("🔍 Checking required packages...")
     missing_packages = []
     
-    # Check each required package and report status
-    for package in required_packages:
-        if check_package(package):
-            print(f"✅ {package} is installed")
+    for display_name, import_name in required_packages:
+        if check_package(display_name, import_name):
+            print(f"  ✅ {display_name}")
         else:
-            print(f"❌ {package} is NOT installed")
-            missing_packages.append(package)
+            print(f"  ❌ {display_name}")
+            missing_packages.append(display_name)
     
-    # Check for the existence of required model files
-    print("\nChecking required model files...")
-    model_files = ["models/toxicity_model.pkt", "models/tf_idf.pkt"]
+    print("\n📂 Checking model files...")
+    model_files = ["tf_idf.pkt", "toxicity_model.pkt"]
     missing_files = []
     
     for file in model_files:
-        if os.path.exists(file):
-            print(f"✅ {file} exists")
+        file_path = MODELS_DIR / file
+        if file_path.exists():
+            print(f"  ✅ {file}")
         else:
-            print(f"❌ {file} does NOT exist")
+            print(f"  ❌ {file}")
             missing_files.append(file)
     
-    # Check for NLTK resources and download any that are missing
-    print("\nChecking NLTK resources...")
+    print("\n📚 Checking NLTK resources...")
     import nltk
     
-    for resource in nltk_resources:
+    for resource_path, resource_name in nltk_resources:
         try:
-            # Check if resource exists based on resource type
-            if resource == 'punkt':
-                nltk.data.find(f'tokenizers/{resource}')
-            else:
-                nltk.data.find(f'corpora/{resource}')
-            print(f"✅ NLTK {resource} is downloaded")
+            nltk.data.find(resource_path)
+            print(f"  ✅ {resource_name}")
         except LookupError:
-            # If resource is missing, download it automatically
-            print(f"❌ NLTK {resource} is NOT downloaded")
-            print(f"   Downloading NLTK {resource}...")
-            nltk.download(resource)
+            print(f"  ⬇️  Downloading {resource_name}...")
+            nltk.download(resource_name, quiet=True)
+            print(f"  ✅ {resource_name} (downloaded)")
     
-    # Provide summary and recommendations for fixing issues
+    # Summary
+    print("\n" + "=" * 40)
     if missing_packages:
-        print("\n⚠️ Some packages are missing. Install them with:")
-        print(f"pip install {' '.join(missing_packages)}")
+        print("⚠️  Missing packages. Install with:")
+        print(f"   pip install {' '.join(missing_packages)}")
     
     if missing_files:
-        print("\n⚠️ Some model files are missing. Make sure the Toxic Terminator model files are in the current directory.")
-        print("   These files should be generated by running the model.ipynb notebook.")
+        print("⚠️  Missing model files. Run the model.ipynb notebook first.")
     
     if not missing_packages and not missing_files:
-        print("\n✅ All dependencies are satisfied. You can run the Toxic Terminator with:")
-        print("streamlit run app.py")
+        print("✅ All dependencies satisfied!")
+        print("\n🚀 Run the app with:")
+        print(f"   cd {SCRIPT_DIR}")
+        print("   streamlit run app.py")
+
 
 if __name__ == "__main__":
-    # Execute the main function when script is run directly
     main()

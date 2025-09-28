@@ -7,7 +7,7 @@
 
 > **"Purifying Digital Spaces One Tweet at a Time"** 🔍✨
 
-
+![Demo](assets/toxic_app_test_1768471121858.webp)
 
 ## 📋 Table of Contents
 
@@ -167,18 +167,21 @@ CMD ["python", "app.py"]
 
 ## 🚦 Usage
 
-### Real-Time Prediction
-```python
-from toxic_detector import ToxicityClassifier
+### Running the Web Application
+```bash
+# Navigate to the app directory
+cd app
 
-detector = ToxicityClassifier()
-tweet = "@user You're completely worthless!"
-result = detector.classify(tweet)
-
-print(f"🔍 Result: {result['label']} (Confidence: {result['probability']:.2%})")
+# Launch the Streamlit application
+streamlit run app.py
 ```
-**Output:**  
-`🔍 Result: Toxic (Confidence: 98.72%)`
+
+The application will open in your browser at `http://localhost:8501`.
+
+### Example Workflow
+1. Enter text in the input area (e.g., "You're completely worthless!")
+2. Click the "🔍 Analyze" button
+3. View the toxicity prediction with probability score
 
 ---
 
